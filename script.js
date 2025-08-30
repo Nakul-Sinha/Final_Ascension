@@ -1,10 +1,10 @@
 // script.js
 
-// Change these to your desired values:
+// Keys:
 // CHECK_KEY = the key the user must enter (key1).
 // REVEAL_KEY = the key you want to show after a correct match (key2).
-const CHECK_KEY  = "A0S22MergeKey";    // <-- key1 (what the site checks)
-const REVEAL_KEY = "Sequence0Ascend";  // <-- key2 (what the site displays on success)
+const CHECK_KEY  = "A0S22MergeKey";    // <-- key1
+const REVEAL_KEY = "Sequence0Ascend";  // <-- key2
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputEl  = document.getElementById("keyInput");
@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (userVal === CHECK_KEY) {
       resultEl.className = "success";
-      // exact success message you requested — reveals key2 (REVEAL_KEY)
-      resultEl.textContent = `placeholder(true) stateent, will change it later, KEY: ${REVEAL_KEY}`;
+      resultEl.textContent = `placeholder(true) statement, will change it later, KEY: ${REVEAL_KEY}`;
     } else {
       resultEl.className = "error";
       resultEl.textContent =
@@ -25,5 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Trigger check on button click
   btn.addEventListener("click", checkKey);
-  inputEl.addE
+
+  // Allow pressing Enter in the input field to trigger check too
+  inputEl.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      checkKey();
+    }
+  });
+});
