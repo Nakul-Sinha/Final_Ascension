@@ -3,8 +3,8 @@
 // Keys:
 // CHECK_KEY = the key the user must enter (key1).
 // REVEAL_KEY = the key you want to show after a correct match (key2).
-const CHECK_KEY  = "4FF4DRWONSU2I21WMT7FNS1A7SGFNR3Y8DXZZBQWOT56P3C0XODU6BZHYLYKBI9TVDKR";    // <-- key1
-const REVEAL_KEY = "Sequence0Ascend";  // <-- key2
+const CHECK_KEY  = "4FF4DRWONSU2I21WMT7FNS1A7SGFNR3Y8DXZZBQWOT56P3C0XODU6BZHYLYKBI9TVDKR8AWNTYQ9JYG5BPP0";    // <-- key1
+const REVEAL_KEY = "A0S22AscensionKey";  // <-- key2
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputEl  = document.getElementById("keyInput");
