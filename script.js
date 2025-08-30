@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (userVal === CHECK_KEY) {
       resultEl.className = "success";
-      resultEl.textContent = `placeholder(true) statement, will change it later, KEY: ${REVEAL_KEY}`;
+      resultEl.textContent = `O Great Beyonder, you have achieved what was once thought impossible. By merging the twenty-two divine pathways, you now hold the Key to a power that rivals the very Creator. Step forth, claim the throne, and let the realms bear witness to your ascension. KEY: ${REVEAL_KEY}`;
     } else {
       resultEl.className = "error";
       resultEl.textContent =
