@@ -1,25 +1,29 @@
-// stored key (change this to whichever key you want the site to accept)
-// NOTE: matching is case-sensitive. To make it case-insensitive, compare lowercased values.
-const STORED_KEY = "A0S22MergeKey"; // ← change to your chosen key
+// script.js
 
-const inputEl  = document.getElementById("keyInput");
-const btn      = document.getElementById("checkBtn");
-const resultEl = document.getElementById("result");
+// Change these to your desired values:
+// CHECK_KEY = the key the user must enter (key1).
+// REVEAL_KEY = the key you want to show after a correct match (key2).
+const CHECK_KEY  = "A0S22MergeKey";    // <-- key1 (what the site checks)
+const REVEAL_KEY = "Sequence0Ascend";  // <-- key2 (what the site displays on success)
 
-function checkKey() {
-  const userVal = inputEl.value.trim(); // trim whitespace
-  if (userVal === STORED_KEY) {
-    // exact success message you asked for (keeps the text exactly as requested)
-    resultEl.className = "success";
-    resultEl.textContent = `placeholder(true) stateent, will change it later, KEY: ${STORED_KEY}`;
-  } else {
-    resultEl.className = "error";
-    resultEl.textContent = "It seems while creating the Key to final ascension one of the shards corrupted the key, try a different way to create the key";
+document.addEventListener("DOMContentLoaded", () => {
+  const inputEl  = document.getElementById("keyInput");
+  const btn      = document.getElementById("checkBtn");
+  const resultEl = document.getElementById("result");
+
+  function checkKey() {
+    const userVal = (inputEl.value || "").trim();
+
+    if (userVal === CHECK_KEY) {
+      resultEl.className = "success";
+      // exact success message you requested — reveals key2 (REVEAL_KEY)
+      resultEl.textContent = `placeholder(true) stateent, will change it later, KEY: ${REVEAL_KEY}`;
+    } else {
+      resultEl.className = "error";
+      resultEl.textContent =
+        "It seems while creating the Key to final ascension one of the shards corrupted the key, try a different way to create the key";
+    }
   }
-}
 
-// click and Enter support
-btn.addEventListener("click", checkKey);
-inputEl.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") checkKey();
-});
+  btn.addEventListener("click", checkKey);
+  inputEl.addE
